@@ -113,10 +113,12 @@ const cambiarEstadoMenu = (estaAbierto) => {
   document.body.classList.toggle('menu-bloqueado', estaAbierto);
 };
 
-menuToggle.addEventListener('click', () => {
-  const estaAbierto = menuToggle.getAttribute('aria-expanded') === 'true';
-  cambiarEstadoMenu(!estaAbierto);
-});
+if (menuToggle && menuPrincipal) {
+  menuToggle.addEventListener('click', () => {
+    const estaAbierto = menuToggle.getAttribute('aria-expanded') === 'true';
+    cambiarEstadoMenu(!estaAbierto);
+  });
+}
 
 // Hace el cambio de seccion con una animacion
 const deslizarASeccion = (enlace) => {
@@ -202,15 +204,17 @@ if (ticket) {
   });
 }
 
-boton.addEventListener('click', (evento) => {
-  const rectangulo = boton.getBoundingClientRect();
-  const onda = document.createElement('span');
-  onda.className = 'ripple';
-  onda.style.left = `${evento.clientX - rectangulo.left - 6}px`;
-  onda.style.top = `${evento.clientY - rectangulo.top - 6}px`;
-  boton.appendChild(onda);
-  onda.addEventListener('animationend', () => onda.remove());
-});
+if (boton) {
+  boton.addEventListener('click', (evento) => {
+    const rectangulo = boton.getBoundingClientRect();
+    const onda = document.createElement('span');
+    onda.className = 'ripple';
+    onda.style.left = `${evento.clientX - rectangulo.left - 6}px`;
+    onda.style.top = `${evento.clientY - rectangulo.top - 6}px`;
+    boton.appendChild(onda);
+    onda.addEventListener('animationend', () => onda.remove());
+  });
+}
 
 // Efectos del video cuando hacemos scroll
 const actualizarScroll = () => {
@@ -278,18 +282,6 @@ if (!prefiereReducirMovimiento) {
       rgb.style.opacity = '0';
     });
 
-    if (boton) {
-      boton.addEventListener('pointermove', (evento) => {
-        const rectangulo = boton.getBoundingClientRect();
-        const movimientoX = (evento.clientX - (rectangulo.left + rectangulo.width / 2)) * 0.08;
-        const movimientoY = (evento.clientY - (rectangulo.top + rectangulo.height / 2)) * 0.08;
-        boton.style.transform = `translate(${movimientoX}px, ${movimientoY}px) scale(1.04)`;
-      });
-
-      boton.addEventListener('pointerleave', () => {
-        boton.style.transform = '';
-      });
-    }
   }
 
   if (hero && videoHero && contenidoHero) {
@@ -321,6 +313,19 @@ if (!prefiereReducirMovimiento) {
 
   document.addEventListener('pointerout', (evento) => {
     if (evento.target.closest('a, .tarjeta, .boton')) luzCursor.classList.remove('activo');
+  });
+}
+
+if (boton && !prefiereReducirMovimiento) {
+  boton.addEventListener('pointermove', (evento) => {
+    const rectangulo = boton.getBoundingClientRect();
+    const movimientoX = (evento.clientX - (rectangulo.left + rectangulo.width / 2)) * 0.08;
+    const movimientoY = (evento.clientY - (rectangulo.top + rectangulo.height / 2)) * 0.08;
+    boton.style.transform = `translate(${movimientoX}px, ${movimientoY}px) scale(1.04)`;
+  });
+
+  boton.addEventListener('pointerleave', () => {
+    boton.style.transform = '';
   });
 }
 
