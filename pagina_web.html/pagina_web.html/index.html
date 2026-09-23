@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tito Double P | Puebla</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <!-- Esta es la barra de arriba con el nombre y el menu -->
+  <header>
+    <a class="logo-link" href="#" aria-label="Ir al inicio">
+      <img class="logo" src="../logo.png" alt="Tito Double P">
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Estos links llevan a cada parte de la pagina -->
+    <nav id="menu-principal">
+      <a href="#show">El show</a>
+      <a href="#boletos">Boletos</a>
+      <a href="#sede">Sede</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Aqui empieza la parte principal con el video -->
+    <section class="hero">
+      <!-- Todo este texto queda encima del video -->
+      <div class="hero-contenido">
+        <p class="fecha"> 30 de octubre, 2026  Puebla, Mexico</p>
+
+        <h1 class="hero-titulo">
+          <img src="../logo.png" alt="Tito Double P">
+        </h1>
+
+        <p class="descripcion">
+          Una noche de corridos, luces y musica en vivo.
+          Vive la experiencia de Tito Double P en Puebla
+        </p>
+
+        <a class="boton" href="#boletos">Ver boletos</a>
+      </div>
+      <!-- Video de Tito que esta guardado en la carpeta del proyecto -->
+      <div class="artista-escena" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+          <source src="../titovideo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- Efectos de vidrio y luz que siguen al cursor -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="rgb-glow" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="scroll-indicator" aria-hidden="true"><span></span>SCROLL</div>
+    </section>
+    <!-- Informacion sobre el concierto -->
+    <section id="show" class="seccion">
+      <h2>El show</h2>
+
+      <p>
+        Disfruta de una noche con banda en vivo, luces 
+        y tus canciones favoritas de Tito Double P.
+      </p>
+
+      <p>
+        Las puestas abren a las 6:00 p.m.
+        El cociertocomienza a las 9:00 p.m.
+      </p>
+    </section>
+    <!-- Boleto con efecto 3D -->
+    <section id="boletos" class="seccion">
+    <h2>Boletos</h2>
+
+    <div class="ticket" id="ticket">
+      <div class="ticket-main">
+        <div class="ticket-top">
+          <span class="ticket-small">LIVE EXPERIENCE</span>
+          <div class="ticket-artist">
+            <img src="../logo.png" alt="Tito Double P">
+          </div>
+          <div class="ticket-subtitle">EN VIVO</div>
+        </div>
+
+        <div class="ticket-info">
+          <div class="ticket-info-item">
+            <span>FECHA</span>
+            <strong>30 OCT 2026</strong>
+          </div>
+          <div class="ticket-info-item">
+            <span>CIUDAD</span>
+            <strong>PUEBLA</strong>
+          </div>
+          <div class="ticket-info-item">
+            <span>ACCESO</span>
+            <strong>GENERAL</strong>
+          </div>
+        </div>
+
+        <div class="ticket-red-line"></div>
+      </div>
+
+      <!-- Precio del boleto -->
+      <div class="ticket-price">$650 MXN</div>
+
+      <div class="ticket-side">
+        <div class="ticket-qr" aria-hidden="true"></div>
+        <span class="ticket-scan">SCAN TO ENTER</span>
+        <span class="ticket-number">TDP · PUEBLA · 2026</span>
+      </div>
+    </div>
+  </section>
+  <!-- Lugar y horarios del evento -->
+  <section id="sede" class="seccion">
+    <h2>sede</h2>
+
+    <div class="sede-contenido">
+      <div class="sede-info">
+        <h3>Estadio Hermanos Serdan</h3>
+
+        <p>
+          Puebla, Mexico
+          Calzada Ignacio Zaragoza No. 666, Malintzi, Puebla
+        </p>
+      </div>
+      <div class="horarios">
+        <h3>Horarios</h3>
+
+        <p><strong>6:00 p.m.</strong>- Apertura de puertas</p>
+        <p><strong>7:30 p.m.</strong>-Artista invitado</p>
+        <p><strong>8:00 p.m.</strong>-Tito Double P</p>
+      </div>
+    </div>
+  </section>
+  </main>
+  <!-- Pie de pagina con los datos de contacto -->
+  <footer id="contacto">
+    <div class="footer-contenido">
+      <div>
+        <h2>TITO DOUBLE P</h2>
+        <p>En vivo en Puebla</p>
+      </div>
+
+      <div>
+        <h3>Contacto</h3>
+        <a href="mailto: contacto@example.com">
+          contacto@example.com
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-nota">
+      Proyecto universitario de HTML y CSS 
+    </p>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
