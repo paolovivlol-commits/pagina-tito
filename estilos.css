@@ -1138,8 +1138,8 @@ footer {
 }
 
 .MapaTito {
-  width: 20%;
+  width: 60%;
   height: auto;
   margin-top: 20px;
-transform: translate(1000px, -560px);
+/* transform: translate(900px, -610px); */
 }
